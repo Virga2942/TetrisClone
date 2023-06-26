@@ -1,0 +1,16 @@
+body {
+	text-align: center;
+	justify: center;
+	background-color: #1f242f;
+	color: #f3f4f5;
+}
+
+canvas {
+	background-color: #2f343f;
+	width: 50%;
+	margin: 0 auto;
+}
+
+#viewport {
+	width: 100%;
+}
