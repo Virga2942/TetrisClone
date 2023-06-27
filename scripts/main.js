@@ -25,17 +25,15 @@ let field = [
 ];
 
 img = new Image();
-img.src = "tetrisBlock.png"
+img.src = "TetrisBlock.png"
 img.onload = function()
 {
-	ctx.drawImage(img, 10, 10);
-}
-
-for (let i = 0; i < 9; i++)
-{
-	for (let j = 0; j < 19; j++)
+	for (let i = 0; i < 10; i++)
 	{
-		ctx.drawImage(img, i * 25, j * 25, 25, 25);
-		ctx.stroke();
+		for (let j = 0; j < 20; j++)
+		{
+			ctx.drawImage(img, i * 25, j * 25, 25, 25);
+			ctx.stroke();
+		}
 	}
 }
