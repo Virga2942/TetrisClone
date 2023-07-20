@@ -128,24 +128,28 @@ let oPiece = new Tetromino
 	[
 		[0,1,1,0],
 		[0,1,1,0],
+		[0,0,0,0],
 		[0,0,0,0]
 	],
 	//Right
 	[
 		[0,1,1,0],
 		[0,1,1,0],
+		[0,0,0,0],
 		[0,0,0,0]
 	],
 	//Upside down
 	[
 		[0,1,1,0],
 		[0,1,1,0],
+		[0,0,0,0],
 		[0,0,0,0]
 	],
 	//Left
 	[
 		[0,1,1,0],
 		[0,1,1,0],
+		[0,0,0,0],
 		[0,0,0,0]
 	]
 );
@@ -290,9 +294,21 @@ function renderScreen()
 		{
 			//Render the block (with the color being determined by the field)
 			ctx.drawImage(tetrisBlocks[field[j][i]], i * 25, j * 25, 25, 25);
+			renderPiece(6, [1, 1] 0);
 			ctx.stroke();
 		}
 	}
 }
 
 //TODO: Make a function for rendering pieces based off of the current piece
+function renderPiece(tetrominoIndex, position, rotation)
+{
+	for (let i = 0; i < 4; tetrominos[tetrominoIndex].matrices[rotation].length)
+	{
+		for (let j = 0; i < tetrominos[tetrominoIndex].matrices[rotation].length)
+		{
+			if (tetrominos[tetrominoIndex].matrices[rotation][i][j])
+				ctx.drawImage(tetrisBlocks[tetrominos[tetrominoIndex].colorIndex], (j + position[0]) * 25, (i + position[1]) * 25, 25, 25);
+		}
+	}
+}
